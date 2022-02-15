@@ -1,0 +1,14 @@
+export interface MovieType {
+	id: number;
+	title: string;
+	overview: string;
+	poster_path: string;
+	release_date: string;
+	vote_average: number;
+}
+
+export interface PaginationProps {
+	pageNum: number;
+	prevPage: () => void;
+	nextPage: () => void;
+}

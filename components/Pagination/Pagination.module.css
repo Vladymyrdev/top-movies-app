@@ -1,0 +1,27 @@
+.navigation {
+	display: flex;
+	align-items: center;
+	margin: 50px 0;
+}
+.navigation p {
+	font-size: 20px;
+	background: #333;
+	padding: 4px 20px;
+	border-radius: 100px;
+	color: white;
+}
+.navigation button {
+	font-size: 25px;
+	cursor: pointer;
+	background-color: rgb(63, 62, 62);
+	border: none;
+}
+.navigation button:first-child {
+	transform: rotate(45deg);
+	margin-right: 10px;
+}
+
+.navigation button:last-child {
+	transform: rotate(225deg);
+	margin-left: 10px;
+}
