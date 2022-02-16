@@ -59,6 +59,7 @@
 }
 .back > h2,
 .back > h3 {
+	max-width: 80%;
 	margin-bottom: 15px;
 	line-height: 25px;
 }

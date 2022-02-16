@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from 'react';
 import { Rating } from '@mui/material';
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
@@ -16,7 +17,7 @@ export const MovieCard = ({ movie }) => {
 	};
 
 	return (
-		<Link href={`http://www.themoviedb.org/movie/${movie.id}`}>
+		<Link href={`http://www.themoviedb.org/movie/${movie.id}`} passHref={true}>
 			<div className={styles.wrapper_movie_card}>
 				<div className={styles.card}>
 					<div className={styles.front}>
@@ -24,6 +25,7 @@ export const MovieCard = ({ movie }) => {
 							src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
 							width={'100%'}
 							height={'100%'}
+							alt="poster"
 						/>
 						<div className={styles.rating}>
 							<Rating
