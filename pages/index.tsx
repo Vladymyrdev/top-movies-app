@@ -35,7 +35,8 @@ export default function Home() {
 				setMovies(data?.results);
 				router.push(`/?page=${pageNum}`);
 				setIsLoading(false);
-			});
+			})
+			.catch((err) => console.log('Error fetch data', err));
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [pageNum, valueOfSort]);
 

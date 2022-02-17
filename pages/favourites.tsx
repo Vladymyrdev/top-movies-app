@@ -11,6 +11,7 @@ import { Footer } from '../components/Footer';
 import { MovieType } from '../types';
 
 import styles from '../styles/Favourites.module.css';
+import Head from 'next/head';
 
 export default function Favorites() {
 	const [favouritesFilms, setFavouritesFilms] = useState<MovieType[]>([]);
@@ -46,6 +47,11 @@ export default function Favorites() {
 
 	return (
 		<div className={styles.container}>
+			<Head>
+				<title>My favourites movies</title>
+				<meta name="description" content="My favourites movies" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
 			<div className={styles.wrapper}>
 				<h1 className={styles.title}>My favourites films</h1>
 				{isLoading && favouritesFilms?.length !== 0 ? (
