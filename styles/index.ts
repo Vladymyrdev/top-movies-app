@@ -6,10 +6,17 @@ export const FavouritesIcon = styled.div`
 	align-items: center;
 	color: #fff;
 	font-size: 20px;
+	padding: 10px;
 	margin: 40px;
 	position: absolute;
 	top: 120px;
 	right: 35px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	transition: background-color 0.2s ease-in-out;
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
 	& > .MuiSvgIcon-root {
 		fill: rgb(255, 211, 66);
 		cursor: pointer;

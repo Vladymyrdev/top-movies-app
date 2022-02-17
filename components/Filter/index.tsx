@@ -7,7 +7,7 @@ import { FilterWrapper } from '../../styles';
 export const Filter = ({ valueOfSort, handleChangeSorting }) => {
 	return (
 		<FilterWrapper>
-			<span>Sorting by:</span>
+			<span>Sorting rating by:</span>
 			<ToggleButtonGroup
 				color="primary"
 				value={valueOfSort}

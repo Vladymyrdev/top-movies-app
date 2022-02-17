@@ -6,10 +6,11 @@ import React, { useEffect, useState } from 'react';
 import { JSONParser } from '../utils';
 import { API_KEY, API_URL } from './api/constants';
 import { MovieCard } from '../components/MovieCard';
+import { Loader } from '../components/Loader';
+import { Footer } from '../components/Footer';
 import { MovieType } from '../types';
 
 import styles from '../styles/Favourites.module.css';
-import { Loader } from '../components/Loader';
 
 export default function Favorites() {
 	const [favouritesFilms, setFavouritesFilms] = useState<MovieType[]>([]);
@@ -44,25 +45,28 @@ export default function Favorites() {
 	);
 
 	return (
-		<div className={styles.wrapper}>
-			<h1 className={styles.title}>My favourites films</h1>
-			{isLoading && favouritesFilms?.length !== 0 ? (
-				<Loader />
-			) : (
-				<div className={styles.content}>
-					{favouritesFilms?.length !== 0
-						? renderFavouritesFilms()
-						: additionalMessage()}
-				</div>
-			)}
-			<Link href="/" passHref>
-				<Button
-					sx={{ fontFamily: "'Akaya Telivigala', cursive;" }}
-					variant="outlined"
-				>
-					Back to main page
-				</Button>
-			</Link>
+		<div className={styles.container}>
+			<div className={styles.wrapper}>
+				<h1 className={styles.title}>My favourites films</h1>
+				{isLoading && favouritesFilms?.length !== 0 ? (
+					<Loader />
+				) : (
+					<div className={styles.content}>
+						{favouritesFilms?.length !== 0
+							? renderFavouritesFilms()
+							: additionalMessage()}
+					</div>
+				)}
+				<Link href="/" passHref>
+					<Button
+						sx={{ fontFamily: "'Akaya Telivigala', cursive;" }}
+						variant="outlined"
+					>
+						Back to main page
+					</Button>
+				</Link>
+			</div>
+			<Footer />
 		</div>
 	);
 }
