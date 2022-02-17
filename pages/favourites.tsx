@@ -28,7 +28,7 @@ export default function Favorites() {
 					.get(`https://${API_URL}/3/movie/${item}?api_key=${API_KEY}`)
 					.then(({ data }) => setFavouritesFilms((prev) => [...prev, data]))
 					.catch((err) =>
-						console.log('Error fetch dats from local storage', err)
+						console.log('Error fetch data from local storage', err)
 					);
 			});
 			setIsLoading(false);

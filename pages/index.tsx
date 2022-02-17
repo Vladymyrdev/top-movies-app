@@ -15,6 +15,7 @@ import { MovieType } from '../types';
 import styles from '../styles/Home.module.css';
 import { FavouritesIcon } from '../styles';
 import { Footer } from '../components/Footer';
+import { NavBar } from '../components/NavBar';
 
 export default function Home() {
 	const [pageNum, setPageNum] = useState(1);
@@ -64,6 +65,7 @@ export default function Home() {
 				<meta name="description" content="Top 500 movies in TMDB" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<NavBar />
 			<main className={styles.main}>
 				<h1 className={styles.title}>Top 500 movies in TMDB</h1>
 				<Link href="/favourites" passHref={true}>
