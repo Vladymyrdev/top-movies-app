@@ -54,27 +54,30 @@ export const MovieCard = ({ movie }) => {
 	}, [movie.id]);
 
 	return (
-		<Link href={`http://www.themoviedb.org/movie/${movie.id}`} passHref={true}>
-			<div className={styles.wrapper_movie_card}>
-				<div className={styles.card}>
-					<div className={styles.front}>
-						<img
-							src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
-							width={'100%'}
-							height={'100%'}
-							alt="poster"
+		<div className={styles.wrapper_movie_card}>
+			<div className={styles.card}>
+				<div className={styles.front}>
+					<img
+						src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
+						width={'100%'}
+						height={'100%'}
+						alt="poster"
+					/>
+					<div className={styles.rating}>
+						<Rating
+							name="rating"
+							value={movie?.vote_average}
+							readOnly
+							size="medium"
+							max={10}
 						/>
-						<div className={styles.rating}>
-							<Rating
-								name="rating"
-								value={movie?.vote_average}
-								readOnly
-								size="medium"
-								max={10}
-							/>
-							<span>({movie?.vote_average})</span>
-						</div>
+						<span>({movie?.vote_average})</span>
 					</div>
+				</div>
+				<Link
+					href={`http://www.themoviedb.org/movie/${movie.id}`}
+					passHref={true}
+				>
 					<div className={styles.back}>
 						<StarIcon onClick={addOnFavourite(movie.id)}>
 							{iconClick ? <StarRoundedIcon /> : <StarOutlineRoundedIcon />}
@@ -83,8 +86,8 @@ export const MovieCard = ({ movie }) => {
 						<span>{movie?.overview}</span>
 						<h3>Date release: {movie?.release_date}</h3>
 					</div>
-				</div>
+				</Link>
 			</div>
-		</Link>
+		</div>
 	);
 };
